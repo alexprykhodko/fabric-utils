@@ -37,10 +37,11 @@ def display_output(value):
     console.print()
     content, think_content = extract_content(value)
 
+    console.print(Rule())
     if think_content:
-        console.print("-- [italic]ASSISTANT THINKING[/italic] --")
+        console.print('-- [italic]ASSISTANT THINKING[/italic] --')
         console.print(think_content)
-        console.print("-- [italic]END OF ASSISTANT THINKING[/italic] --")
+        console.print('-- [italic]END OF ASSISTANT THINKING[/italic] --')
         console.print()
 
     console.print(Markdown(content))
@@ -50,9 +51,10 @@ def display_output(value):
     console.print()
 
 
-if __name__ == "__main__":
-    # Read JSON input from stdin
+if __name__ == '__main__':
     value = sys.stdin.read()
 
-    # Display messages
-    display_output(value)
+    if not sys.stdout.isatty():
+        sys.stdout.write(value)
+    else:
+        display_output(value)
