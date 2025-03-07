@@ -28,5 +28,5 @@ ai p-ctx "Summarize the context please"
 3. Install Python requirements `pip3 install -r scripts/requirements.txt`
 4. Prepare your LLM provider's API keys.
 5. Run `fabric -S` to run the initial configuration of Fabric. 
-6. Finally, add `source "$HOME/.config/fabric/scripts/shell-utils.sh` to your shell init script.
+6. Finally, add `source "$HOME/.config/fabric/scripts/shell-utils.sh"` to your shell init script.
 7. See `scripts/config.sh` for the model aliases.
